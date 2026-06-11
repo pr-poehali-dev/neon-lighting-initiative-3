@@ -2,9 +2,9 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const images = [
-  "/minimal-architecture-portfolio-with-clean-lines.jpg",
-  "/fashion-photography-editorial-black-and-white.jpg",
-  "/modern-ui-design-portfolio-mockup.jpg",
+  "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/5ad952e5-f51e-4c98-adca-d5789996d1f9.jpg",
+  "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/2ded937c-e208-443a-9e7d-ac7dd51c9786.jpg",
+  "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/acf7e5a5-e8dc-4330-9749-bb10bac57a8c.jpg",
 ]
 
 export function HeroSection() {
@@ -26,7 +26,6 @@ export function HeroSection() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background px-6 py-24"
     >
-      {/* Stacked images */}
       <div className="relative flex items-center justify-center">
         <motion.div
           className="absolute w-[280px] md:w-[320px] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl"
@@ -36,8 +35,8 @@ export function HeroSection() {
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <img
-            src={images[0] || "/placeholder.svg"}
-            alt="Портфолио 1"
+            src={images[0]}
+            alt="Работы мастеров"
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -50,8 +49,8 @@ export function HeroSection() {
           transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
           <img
-            src={images[1] || "/placeholder.svg"}
-            alt="Портфолио 2"
+            src={images[1]}
+            alt="Работа мастера"
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -64,8 +63,8 @@ export function HeroSection() {
           transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <img
-            src={images[2] || "/placeholder.svg"}
-            alt="Портфолио 3"
+            src={images[2]}
+            alt="Тату стиль"
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -78,7 +77,7 @@ export function HeroSection() {
         transition={{ duration: 1, delay: 0.8 }}
       >
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-center text-foreground mix-blend-difference">
-          Ваши работы, <em className="italic">в фокусе</em>.
+          Твоя история, <em className="italic">на коже</em>.
         </h1>
       </motion.div>
 

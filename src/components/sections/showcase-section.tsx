@@ -2,9 +2,18 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const showcaseImages = [
-  "/modern-architecture-building-exterior-minimal.jpg",
-  "/fashion-model-editorial-portrait-dramatic-lighting.jpg",
-  "/interior-design-minimalist-living-room-natural-lig.jpg",
+  {
+    src: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/5ad952e5-f51e-4c98-adca-d5789996d1f9.jpg",
+    label: "Black & Grey",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/6a58efd0-deea-42d7-a645-31d237e44b51.jpg",
+    label: "Neo-Traditional",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/fb335ee8-f279-4920-8f60-59217048b604.jpg",
+    label: "Fine Line",
+  },
 ]
 
 export function ShowcaseSection() {
@@ -29,11 +38,11 @@ export function ShowcaseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Галерея
+          Наши работы
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {showcaseImages.map((src, i) => (
+          {showcaseImages.map((item, i) => (
             <motion.div
               key={i}
               className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden group"
@@ -49,12 +58,15 @@ export function ShowcaseSection() {
               data-clickable
             >
               <motion.img
-                src={src}
-                alt={`Изображение ${i + 1}`}
+                src={item.src}
+                alt={item.label}
                 className="w-full h-full object-cover"
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-white font-serif text-lg">{item.label}</span>
+              </div>
             </motion.div>
           ))}
         </div>

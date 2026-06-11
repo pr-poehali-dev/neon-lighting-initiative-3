@@ -5,24 +5,24 @@ import { ArrowRight } from "lucide-react"
 
 const articles = [
   {
-    title: "Искусство визуального сторителлинга",
-    category: "Дизайн",
-    image: "/visual-storytelling-design-article.jpg",
+    title: "Как подготовиться к первому сеансу татуировки",
+    category: "Советы",
+    image: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/2ded937c-e208-443a-9e7d-ac7dd51c9786.jpg",
   },
   {
-    title: "Как создать личный бренд онлайн",
-    category: "Стратегия",
-    image: "/personal-branding-digital-marketing.jpg",
+    title: "Уход за тату: что делать в первые две недели",
+    category: "Уход",
+    image: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/5ad952e5-f51e-4c98-adca-d5789996d1f9.jpg",
   },
   {
-    title: "Тренды типографики 2025",
-    category: "Типографика",
-    image: "/typography-trends-modern-fonts.jpg",
+    title: "Популярные стили 2025 года: что выбрать?",
+    category: "Тренды",
+    image: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/acf7e5a5-e8dc-4330-9749-bb10bac57a8c.jpg",
   },
   {
-    title: "Минимализм в дизайне портфолио",
-    category: "Вдохновение",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "История японской татуировки: от самураев до наших дней",
+    category: "История",
+    image: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/6a58efd0-deea-42d7-a645-31d237e44b51.jpg",
   },
 ]
 
@@ -43,7 +43,7 @@ export function InsightsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Статьи
+          Блог
         </motion.p>
 
         <div className="divide-y divide-border">
@@ -72,25 +72,22 @@ export function InsightsSection() {
           ))}
         </div>
 
-        {/* Floating hover image */}
         <AnimatePresence>
           {hoveredIndex !== null && (
             <motion.div
               className="fixed pointer-events-none z-50 w-[200px] md:w-[300px] rounded-lg overflow-hidden shadow-2xl hidden md:block"
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                x: mousePosition.x + 20,
-                y: mousePosition.y - 100,
-              }}
+              animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.2 }}
+              style={{
+                left: mousePosition.x + 20,
+                top: mousePosition.y - 100,
+              }}
             >
               <img
-                src={articles[hoveredIndex].image || "/placeholder.svg"}
+                src={articles[hoveredIndex].image}
                 alt={articles[hoveredIndex].title}
-                className="w-full h-auto"
+                className="w-full h-[180px] object-cover"
               />
             </motion.div>
           )}

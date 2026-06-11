@@ -3,18 +3,18 @@ import { Check } from "lucide-react"
 
 const plans = [
   {
-    name: "Старт",
-    price: "1 200",
-    period: " руб/мес",
-    description: "Для личного портфолио",
-    features: ["5 страниц", "Свой домен", "Базовая аналитика", "Поддержка по email"],
+    name: "Мини",
+    price: "от 3 000",
+    period: " ₽",
+    description: "Небольшие работы до 10 см",
+    features: ["Размер до 10 см", "1–2 часа работы", "Бесплатная консультация", "Эскиз включён"],
   },
   {
-    name: "Про",
-    price: "2 900",
-    period: " руб/мес",
-    description: "Для растущих авторов",
-    features: ["Безлимит страниц", "Приоритет поддержки", "Расширенная аналитика", "Свой брендинг", "Работа в команде"],
+    name: "Сессия",
+    price: "от 8 000",
+    period: " ₽",
+    description: "Большие и сложные работы",
+    features: ["Размер от 15 см", "3–6 часов работы", "Уникальный эскиз", "Цветная или ч/б", "Сопровождение заживления"],
     popular: true,
   },
 ]
@@ -29,15 +29,15 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Простые и понятные цены</h2>
-          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Начните бесплатно, платите когда готовы.</p>
+          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Стоимость работ</h2>
+          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Итоговая цена зависит от размера, стиля и сложности работы. Запишитесь на консультацию — она бесплатна.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={i}
-              className={`relative bg-background rounded-xl p-8 ticket-edge ${plan.popular ? "ring-2 ring-primary" : ""}`}
+              className={`relative bg-background rounded-xl p-8 ${plan.popular ? "ring-2 ring-primary" : ""}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -45,7 +45,7 @@ export function PricingSection() {
               data-clickable
             >
               {plan.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-lime text-foreground text-xs font-medium px-3 py-1 rounded-full">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
                   Популярный
                 </span>
               )}
@@ -72,10 +72,10 @@ export function PricingSection() {
                 className={`w-full mt-8 py-3 px-6 rounded-lg font-medium transition-colors ${
                   plan.popular
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "bg-secondary text-foreground hover:bg-accent/30"
+                    : "bg-secondary text-foreground border border-border hover:bg-accent/30"
                 }`}
               >
-                Начать
+                Записаться
               </button>
             </motion.div>
           ))}
