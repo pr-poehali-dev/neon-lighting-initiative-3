@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import { QRCodeSVG } from "qrcode.react"
+
+const SITE_URL = "https://neon-lighting-initiative-3--preview.poehali.dev/"
 
 const footerLinks = [
   { label: "Работы", href: "#" },
@@ -80,8 +83,30 @@ export function FooterSection() {
           </motion.div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-muted-foreground text-sm">2025 INK Tattoo Studio. Все права защищены.</p>
+
+          <motion.div
+            className="flex items-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-right hidden md:block">
+              <p className="text-foreground text-sm font-medium">Сканируй и переходи</p>
+              <p className="text-muted-foreground text-xs mt-0.5">на наш сайт</p>
+            </div>
+            <div className="bg-white p-2 rounded-lg">
+              <QRCodeSVG
+                value={SITE_URL}
+                size={80}
+                bgColor="#ffffff"
+                fgColor="#18181b"
+                level="M"
+              />
+            </div>
+          </motion.div>
+
           <div className="flex gap-6">
             <a href="#" className="text-muted-foreground hover:text-foreground text-sm" data-clickable>
               Конфиденциальность
