@@ -7,7 +7,7 @@ const masters = [
     experience: "8 лет",
     bio: "Специализируется на портретах и детальных работах в чёрно-серой технике. Каждая работа — это история, рассказанная через тень и свет.",
     tags: ["Портреты", "Реализм", "Black & Grey"],
-    photo: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/fb397b06-f82b-4efc-9f34-0003d80c3603.jpg",
+    photo: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/ffef86ad-845e-4f00-bfb5-438f64fa3793.jpg",
   },
   {
     name: "Диана Борисова",
