@@ -7,7 +7,7 @@ const masters = [
     experience: "8 лет",
     bio: "Специализируется на портретах и детальных работах в чёрно-серой технике. Каждая работа — это история, рассказанная через тень и свет.",
     tags: ["Портреты", "Реализм", "Black & Grey"],
-    emoji: "🖤",
+    photo: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/fb397b06-f82b-4efc-9f34-0003d80c3603.jpg",
   },
   {
     name: "Диана Борисова",
@@ -15,7 +15,7 @@ const masters = [
     experience: "5 лет",
     bio: "Мастер тонких линий и деликатных работ. Создаёт изящные татуировки, которые выглядят как нарисованные вручную эскизы.",
     tags: ["Fine Line", "Минимализм", "Ботаника"],
-    emoji: "🌿",
+    photo: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/0fb002e1-486d-480d-aeef-52e519b21c8d.jpg",
   },
   {
     name: "Кирилл Назаров",
@@ -23,7 +23,7 @@ const masters = [
     experience: "10 лет",
     bio: "Прошёл стажировку в Токио. Мастерски владеет японской традицией иредзуми — от карпов кои до масок они.",
     tags: ["Japanese", "Irezumi", "Neo-Traditional"],
-    emoji: "🐉",
+    photo: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/220c467c-15e5-4326-accf-6754c6063047.jpg",
   },
   {
     name: "Соня Крылова",
@@ -31,7 +31,7 @@ const masters = [
     experience: "6 лет",
     bio: "Работает с точными геометрическими формами и орнаментальными паттернами. Находит красоту в математической точности.",
     tags: ["Geometric", "Ornamental", "Dotwork"],
-    emoji: "◈",
+    photo: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/b676967a-11f5-4571-96e8-9268c998b630.jpg",
   },
 ]
 
@@ -82,11 +82,11 @@ export function MastersSection() {
               transition={{ delay: i * 0.08 }}
               data-clickable
             >
-              <div className="flex items-start justify-between">
-                <div className="w-16 h-16 rounded-xl bg-background flex items-center justify-center text-3xl">
-                  {master.emoji}
+              <div className="flex items-start justify-between gap-4">
+                <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                  <img src={master.photo} alt={master.name} className="w-full h-full object-cover object-top" />
                 </div>
-                <span className="text-muted-foreground text-sm bg-background px-3 py-1 rounded-full">
+                <span className="text-muted-foreground text-sm bg-background px-3 py-1 rounded-full h-fit">
                   {master.experience}
                 </span>
               </div>
