@@ -2,33 +2,39 @@ import type React from "react"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 const articles = [
   {
     title: "Как подготовиться к первому сеансу татуировки",
     category: "Советы",
     image: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/2ded937c-e208-443a-9e7d-ac7dd51c9786.jpg",
+    href: "/blog/first-session",
   },
   {
     title: "Уход за тату: что делать в первые две недели",
     category: "Уход",
     image: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/5ad952e5-f51e-4c98-adca-d5789996d1f9.jpg",
+    href: "#",
   },
   {
     title: "Популярные стили 2025 года: что выбрать?",
     category: "Тренды",
     image: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/acf7e5a5-e8dc-4330-9749-bb10bac57a8c.jpg",
+    href: "#",
   },
   {
     title: "История японской татуировки: от самураев до наших дней",
     category: "История",
     image: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/6a58efd0-deea-42d7-a645-31d237e44b51.jpg",
+    href: "#",
   },
 ]
 
 export function InsightsSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const navigate = useNavigate()
 
   const handleMouseMove = (e: React.MouseEvent) => {
     setMousePosition({ x: e.clientX, y: e.clientY })
@@ -50,8 +56,14 @@ export function InsightsSection() {
           {articles.map((article, i) => (
             <motion.a
               key={i}
-              href="#"
-              className="group flex items-center justify-between py-6 relative"
+              href={article.href}
+              onClick={(e) => {
+                if (article.href !== "#") {
+                  e.preventDefault()
+                  navigate(article.href)
+                }
+              }}
+              className="group flex items-center justify-between py-6 relative cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
