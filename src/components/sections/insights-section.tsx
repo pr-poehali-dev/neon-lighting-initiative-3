@@ -15,19 +15,19 @@ const articles = [
     title: "Уход за тату: что делать в первые две недели",
     category: "Уход",
     image: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/5ad952e5-f51e-4c98-adca-d5789996d1f9.jpg",
-    href: "#",
+    href: "/blog/aftercare",
   },
   {
     title: "Популярные стили 2025 года: что выбрать?",
     category: "Тренды",
     image: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/acf7e5a5-e8dc-4330-9749-bb10bac57a8c.jpg",
-    href: "#",
+    href: "/blog/styles-2025",
   },
   {
     title: "История японской татуировки: от самураев до наших дней",
     category: "История",
     image: "https://cdn.poehali.dev/projects/5b4ad5a0-5e02-4e82-bd13-f8d7781af35e/files/6a58efd0-deea-42d7-a645-31d237e44b51.jpg",
-    href: "#",
+    href: "/blog/japanese-tattoo",
   },
 ]
 
