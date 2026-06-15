@@ -10,6 +10,8 @@ import BlogFirstSession from "./pages/BlogFirstSession";
 import BlogAftercare from "./pages/BlogAftercare";
 import BlogStyles2025 from "./pages/BlogStyles2025";
 import BlogJapaneseTattoo from "./pages/BlogJapaneseTattoo";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,8 @@ const App = () => (
           <Route path="/blog/aftercare" element={<BlogAftercare />} />
           <Route path="/blog/styles-2025" element={<BlogStyles2025 />} />
           <Route path="/blog/japanese-tattoo" element={<BlogJapaneseTattoo />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

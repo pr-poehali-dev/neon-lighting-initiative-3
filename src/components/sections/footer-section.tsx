@@ -2,6 +2,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { QRCodeSVG } from "qrcode.react"
+import { useNavigate } from "react-router-dom"
 
 const SITE_URL = "https://neon-lighting-initiative-3--preview.poehali.dev/"
 
@@ -15,6 +16,7 @@ const footerLinks = [
 export function FooterSection() {
   const [name, setName] = useState("")
   const [phone, setPhone] = useState("")
+  const navigate = useNavigate()
 
   return (
     <footer className="relative bg-background px-6 py-24 overflow-hidden">
@@ -111,12 +113,12 @@ export function FooterSection() {
           </motion.div>
 
           <div className="flex gap-6">
-            <a href="#" className="text-muted-foreground hover:text-foreground text-sm" data-clickable>
+            <button onClick={() => navigate("/privacy")} className="text-muted-foreground hover:text-foreground text-sm transition-colors" data-clickable>
               Конфиденциальность
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground text-sm" data-clickable>
+            </button>
+            <button onClick={() => navigate("/terms")} className="text-muted-foreground hover:text-foreground text-sm transition-colors" data-clickable>
               Условия
-            </a>
+            </button>
           </div>
         </div>
       </div>
