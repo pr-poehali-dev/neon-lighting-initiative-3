@@ -68,15 +68,17 @@ export function PricingSection() {
                 ))}
               </ul>
 
-              <button
-                className={`w-full mt-8 py-3 px-6 rounded-lg font-medium transition-colors ${
+              <a
+                href="tel:+79605536679"
+                className={`w-full mt-8 py-3 px-6 rounded-lg font-medium transition-colors flex flex-col items-center gap-0.5 ${
                   plan.popular
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
                     : "bg-secondary text-foreground border border-border hover:bg-accent/30"
                 }`}
               >
-                Записаться
-              </button>
+                <span>Записаться</span>
+                <span className="text-xs opacity-70 font-normal">+7 960 553-66-79</span>
+              </a>
             </motion.div>
           ))}
         </div>

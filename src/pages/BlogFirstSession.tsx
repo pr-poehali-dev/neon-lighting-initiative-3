@@ -130,12 +130,13 @@ export default function BlogFirstSession() {
         >
           <h3 className="font-serif text-3xl text-foreground">Готовы к первому тату?</h3>
           <p className="text-muted-foreground mt-3 mb-8">Запишитесь на бесплатную консультацию — обсудим идею и подберём мастера.</p>
-          <button
-            onClick={() => navigate("/")}
-            className="bg-primary text-primary-foreground px-8 py-4 rounded-xl font-medium hover:bg-primary/90 transition-colors"
+          <a
+            href="tel:+79605536679"
+            className="inline-flex flex-col items-center gap-0.5 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-medium hover:bg-primary/90 transition-colors"
           >
-            Записаться на консультацию
-          </button>
+            <span>Записаться на консультацию</span>
+            <span className="text-xs opacity-70 font-normal">+7 960 553-66-79</span>
+          </a>
         </motion.div>
       </div>
     </div>
