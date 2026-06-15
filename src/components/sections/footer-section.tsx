@@ -54,7 +54,10 @@ export function FooterSection() {
 
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-foreground font-serif text-2xl mb-2">Запишитесь на сеанс</p>
-            <p className="text-muted-foreground text-sm mb-6">Оставьте имя и номер — мы свяжемся с вами в течение часа.</p>
+            <p className="text-muted-foreground text-sm mb-3">Оставьте имя и номер — мы свяжемся с вами в течение часа.</p>
+            <a href="tel:+79605536679" className="inline-flex items-center gap-2 text-foreground font-medium hover:text-primary transition-colors mb-6" data-clickable>
+              +7 960 553-66-79
+            </a>
             <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-3">
               <input
                 type="text"
